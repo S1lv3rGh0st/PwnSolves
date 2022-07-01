@@ -1,0 +1,6 @@
+set follow-fork-mode child 
+set detach-on-fork off
+gef-remote 192.168.2.2:1919 --download-everything
+b *0x76f186cc
+c
+

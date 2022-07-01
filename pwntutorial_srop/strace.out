@@ -1,0 +1,15 @@
+execve("./poc-32", ["./poc-32"], 0x7fffffffe240 /* 42 vars */) = 0
+uname({sysname="Linux", nodename="debian", ...}) = 0
+brk(NULL)                               = 0x80f9000
+brk(0x80f9d40)                          = 0x80f9d40
+set_thread_area({entry_number=-1, base_addr=0x80f9840, limit=0x0fffff, seg_32bit=1, contents=0, read_exec_only=0, limit_in_pages=1, seg_not_present=0, useable=1}) = 0 (entry_number=12)
+brk(0x811ad40)                          = 0x811ad40
+brk(0x811b000)                          = 0x811b000
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+fstat64(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x4), ...}) = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xf7ff7000
+write(1, "Buffer = 0xffffd0e0\n", 20)   = 20
+read(0, "\272\216\4\10w\0\0\0\264\216\4\10\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0<\321\377\377"..., 600) = 533
+sigreturn({mask=[HUP INT QUIT ILL ABRT USR1 ALRM TERM CHLD TSTP TTOU URG VTALRM PROF WINCH PWR SYS RT_3 RT_5 RT_6 RT_10 RT_11 RT_13 RT_15 RT_16 RT_17 RT_18 RT_19 RT_20 RT_21 RT_22 RT_23 RT_24 RT_25 RT_26 RT_27 RT_28 RT_29 RT_30 RT_31 RT_32]}) = 1
+--- SIGSEGV {si_signo=SIGSEGV, si_code=SI_KERNEL, si_addr=NULL} ---
++++ killed by SIGSEGV (core dumped) +++
